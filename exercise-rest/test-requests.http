@@ -36,9 +36,11 @@ POST http://localhost:3000/exercises HTTP/1.1
 content-type: application/json
 
 {
-    "title": "Eternal Sunshine Of The Spotless Mind",
-    "year": 2004,
-    "language": "English"
+    "name": "Sumo Squat",
+    "reps": 6,
+    "weight": 20,
+    "unit": "kgs",
+    "date": "08-06-21"
 }
 
 ###
