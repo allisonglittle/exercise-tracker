@@ -1,9 +1,9 @@
 // Get the mongoose object
 import mongoose from 'mongoose';
 
-// Prepare to the database movies_db in the MongoDB server running locally on port 27017
+// Prepare to the database Exercises_db in the MongoDB server running locally on port 27017
 mongoose.connect(
-    "mongodb://localhost:27017/movies_db",
+    "mongodb://localhost:27017/exercises_db",
     { useNewUrlParser: true, useUnifiedTopology: true }
 );
 
@@ -20,78 +20,80 @@ mongoose.set("useCreateIndex", true);
 /**
  * Define the schema
  */
-const movieSchema = mongoose.Schema({
-    title: { type: String, required: true },
-    year: { type: Number, required: true },
-    language: { type: String, required: true }
+const exerciseSchema = mongoose.Schema({
+    name: { type: String, required: true },
+    reps: { type: Number, required: true },
+    weight: { type: Number, required: true },
+    unit: { type: String, required: true },
+    date: { type: Date, required: true}
 });
 
 /**
  * Compile the model from the schema. This must be done after defining the schema.
  */
-const Movie = mongoose.model("Movie", movieSchema);
+const Exercise = mongoose.model("Exercise", exerciseSchema);
 
 /**
- * Create a movie
+ * Create a Exercise
  * @param {String} title 
  * @param {Number} year 
  * @param {String} language 
  * @returns A promise. Resolves to the JSON object for the document created by calling save
  */
-const createMovie = async (title, year, language) => {
-    // Call the constructor to create an instance of the model class Movie
-    const movie = new Movie({ title: title, year: year, language: language });
+const createExercise = async (title, year, language) => {
+    // Call the constructor to create an instance of the model class Exercise
+    const Exercise = new Exercise({ title: title, year: year, language: language });
     // Call save to persist this object as a document in MongoDB
-    return movie.save();
+    return Exercise.save();
 }
 
 /**
- * Retrive movies based on the filter, projection and limit parameters
+ * Retrive Exercises based on the filter, projection and limit parameters
  * @param {Object} filter 
  * @param {String} projection 
  * @param {Number} limit 
  * @returns 
  */
-const findMovies = async (filter, projection, limit) => {
-    const query = Movie.find(filter)
+const findExercises = async (filter, projection, limit) => {
+    const query = Exercise.find(filter)
         .select(projection)
         .limit(limit);
     return query.exec();
 }
 
 /**
- * Find the movie with the given ID value
+ * Find the Exercise with the given ID value
  * @param {String} _id 
  * @returns 
  */
-const findMovieById = async (_id) => {
-    const query = Movie.findById(_id);
+const findExerciseById = async (_id) => {
+    const query = Exercise.findById(_id);
     return query.exec();
 }
 
 /**
- * Replace the title, year, language properties of the movie with the id value provided
+ * Replace the title, year, language properties of the exercise with the id value provided
  * @param {String} _id 
  * @param {String} title 
  * @param {Number} year 
  * @param {String} language 
  * @returns A promise. Resolves to the number of documents modified
  */
-const replaceMovie = async (_id, title, year, language) => {
-    const result = await Movie.replaceOne({ _id: _id }, { title: title, year: year, language: language });
+const replaceExercise = async (_id, title, year, language) => {
+    const result = await Exercise.replaceOne({ _id: _id }, { title: title, year: year, language: language });
     return result.nModified;
 }
 
 
 /**
- * Delete the movie with provided id value
+ * Delete the exercise with provided id value
  * @param {String} _id 
  * @returns A promise. Resolves to the count of deleted documents
  */
 const deleteById = async (_id) => {
-    const result = await Movie.deleteOne({ _id: _id });
+    const result = await Exercise.deleteOne({ _id: _id });
     // Return the count of deleted document. Since we called deleteOne, this will be either 0 or 1.
     return result.deletedCount;
 }
 
-export { deleteById, replaceMovie, findMovieById, createMovie, findMovies };
+export { deleteById, replaceExercise, findExerciseById, createExercise, findExercises };

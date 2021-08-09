@@ -1,4 +1,4 @@
-import * as movies from './exercise_model.mjs';
+import * as exercises from './exercise_model.mjs';
 import express from 'express';
 
 const PORT = 3000;
@@ -8,12 +8,12 @@ const app = express();
 app.use(express.json());
 
 /**
- * Create a new movie with the title, year and language provided in the body
+ * Create a new exercise with the title, year and language provided in the body
  */
-app.post('/movies', (req, res) => {
-    movies.createMovie(req.body.title, req.body.year, req.body.language)
-        .then(movie => {
-            res.status(201).json(movie);
+app.post('/exercises', (req, res) => {
+    exercises.createExercise(req.body.title, req.body.year, req.body.language)
+        .then(Exercise => {
+            res.status(201).json(Exercise);
         })
         .catch(error => {
             console.error(error);
@@ -26,14 +26,14 @@ app.post('/movies', (req, res) => {
 
 
 /**
- * Retrive the movie corresponding to the ID provided in the URL.
+ * Retrive the exercise corresponding to the ID provided in the URL.
  */
-app.get('/movies/:_id', (req, res) => {
-    const movieId = req.params._id;
-    movies.findMovieById(movieId)
-        .then(movie => {
-            if (movie !== null) {
-                res.json(movie);
+app.get('/exercises/:_id', (req, res) => {
+    const ExerciseId = req.params._id;
+    exercises.findExerciseById(ExerciseId)
+        .then(Exercise => {
+            if (Exercise !== null) {
+                res.json(Exercise);
             } else {
                 res.status(404).json({ Error: 'Resource not found' });
             }
@@ -45,19 +45,19 @@ app.get('/movies/:_id', (req, res) => {
 });
 
 /**
- * Retrive movies. 
- * If the query parameters include a year, then only the movies for that year are returned.
- * Otherwise, all movies are returned.
+ * Retrive exercises. 
+ * If the query parameters include a year, then only the exercises for that year are returned.
+ * Otherwise, all exercises are returned.
  */
-app.get('/movies', (req, res) => {
+app.get('/exercises', (req, res) => {
     let filter = {};
     // Is there a query parameter named year? If so add a filter based on its value.
     if (req.query.year !== undefined) {
         filter = { year: req.query.year };
     }
-    movies.findMovies(filter, '', 0)
-        .then(movies => {
-            res.json(movies);
+    exercises.findexercises(filter, '', 0)
+        .then(exercises => {
+            res.json(exercises);
         })
         .catch(error => {
             console.error(error);
@@ -66,11 +66,11 @@ app.get('/movies', (req, res) => {
 });
 
 /**
- * Update the movie whose id is provided in the path parameter and set
+ * Update the Exercise whose id is provided in the path parameter and set
  * its title, year and language to the values provided in the body.
  */
-app.put('/movies/:_id', (req, res) => {
-    movies.replaceMovie(req.params._id, req.body.title, req.body.year, req.body.language)
+app.put('/exercises/:_id', (req, res) => {
+    exercises.replaceExercise(req.params._id, req.body.title, req.body.year, req.body.language)
         .then(numUpdated => {
             if (numUpdated === 1) {
                 res.json({ _id: req.params._id, title: req.body.title, year: req.body.year, language: req.body.language })
@@ -85,10 +85,10 @@ app.put('/movies/:_id', (req, res) => {
 });
 
 /**
- * Delete the movie whose id is provided in the query parameters
+ * Delete the Exercise whose id is provided in the query parameters
  */
-app.delete('/movies/:_id', (req, res) => {
-    movies.deleteById(req.params._id)
+app.delete('/exercises/:_id', (req, res) => {
+    exercises.deleteById(req.params._id)
         .then(deletedCount => {
             if (deletedCount === 1) {
                 res.status(204).send();
