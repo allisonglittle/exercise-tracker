@@ -8,18 +8,16 @@ const app = express();
 app.use(express.json());
 
 /**
- * Create a new exercise with the title, year and language provided in the body
+ * Create a new exercise with the name, reps, weight, unit, and date provided in the body
  */
 app.post('/exercises', (req, res) => {
-    exercises.createExercise(req.body.title, req.body.year, req.body.language)
+    exercises.createExercise(req.body.name, req.body.reps, req.body.weight, req.body.unit, req.body.date)
         .then(Exercise => {
             res.status(201).json(Exercise);
         })
         .catch(error => {
             console.error(error);
-            // In case of an error, send back status code 400 in case of an error.
-            // A better approach will be to examine the error and send an
-            // error status code corresponding to the error.
+            // In case of an error, send back status code 400.
             res.status(400).json({ Error: 'Request failed' });
         });
 });
@@ -67,13 +65,13 @@ app.get('/exercises', (req, res) => {
 
 /**
  * Update the Exercise whose id is provided in the path parameter and set
- * its title, year and language to the values provided in the body.
+ * its name, year and language to the values provided in the body.
  */
 app.put('/exercises/:_id', (req, res) => {
-    exercises.replaceExercise(req.params._id, req.body.title, req.body.year, req.body.language)
+    exercises.replaceExercise(req.params._id, req.body.name, req.body.year, req.body.language)
         .then(numUpdated => {
             if (numUpdated === 1) {
-                res.json({ _id: req.params._id, title: req.body.title, year: req.body.year, language: req.body.language })
+                res.json({ _id: req.params._id, name: req.body.name, year: req.body.year, language: req.body.language })
             } else {
                 res.status(404).json({ Error: 'Resource not found' });
             }
