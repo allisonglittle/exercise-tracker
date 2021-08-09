@@ -11,14 +11,14 @@ content-type: application/json
 }
 
 ###
-GET http://localhost:3000/movies HTTP/1.1
+GET http://localhost:3000/exercises HTTP/1.1
 
 ###
-GET http://localhost:3000/movies/61113eb87094a14718b99347 HTTP/1.1
+GET http://localhost:3000/exercises/61113eb87094a14718b99347 HTTP/1.1
 
 ###
 
-PUT http://localhost:3000/movies/61113eb87094a14718b99347 HTTP/1.1
+PUT http://localhost:3000/exercises/61113eb87094a14718b99347 HTTP/1.1
 content-type: application/json
 
 {
@@ -28,11 +28,11 @@ content-type: application/json
 }
 
 ###
-DELETE http://localhost:3000/movies/61113eb87094a14718b99347 HTTP/1.1
+DELETE http://localhost:3000/exercises/61113eb87094a14718b99347 HTTP/1.1
 
 
 ###
-POST http://localhost:3000/movies HTTP/1.1
+POST http://localhost:3000/exercises HTTP/1.1
 content-type: application/json
 
 {
@@ -42,7 +42,7 @@ content-type: application/json
 }
 
 ###
-POST http://localhost:3000/movies HTTP/1.1
+POST http://localhost:3000/exercises HTTP/1.1
 content-type: application/json
 
 {
@@ -52,7 +52,7 @@ content-type: application/json
 }
 
 ###
-POST http://localhost:3000/movies HTTP/1.1
+POST http://localhost:3000/exercises HTTP/1.1
 content-type: application/json
 
 {
@@ -63,7 +63,7 @@ content-type: application/json
 
 
 ###
-POST http://localhost:3000/movies HTTP/1.1
+POST http://localhost:3000/exercises HTTP/1.1
 content-type: application/json
 
 {
@@ -74,7 +74,7 @@ content-type: application/json
 
 
 ###
-POST http://localhost:3000/movies HTTP/1.1
+POST http://localhost:3000/exercises HTTP/1.1
 content-type: application/json
 
 {
@@ -85,7 +85,7 @@ content-type: application/json
 
 
 ###
-POST http://localhost:3000/movies HTTP/1.1
+POST http://localhost:3000/exercises HTTP/1.1
 content-type: application/json
 
 {
@@ -95,7 +95,7 @@ content-type: application/json
 }
 
 ###
-POST http://localhost:3000/movies HTTP/1.1
+POST http://localhost:3000/exercises HTTP/1.1
 content-type: application/json
 
 {
