@@ -18,13 +18,13 @@ GET http://localhost:3000/exercises/6111af86ffdccf245c3db1c2 HTTP/1.1
 
 ###
 
-PUT http://localhost:3000/exercises/6111b92f4c751c63a84b5be7 HTTP/1.1
+PUT http://localhost:3000/exercises/6111b91c4c751c63a84b5be5 HTTP/1.1
 content-type: application/json
 
 {
-    "name": "Sumo Squat",
+    "name": "Goblet Squat",
     "reps": 4,
-    "weight": 20,
+    "weight": 40,
     "unit": "kgs",
     "date": "08-05-21"
 }
