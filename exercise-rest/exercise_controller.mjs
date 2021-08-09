@@ -77,7 +77,7 @@ app.put('/exercises/:_id', (req, res) => {
 });
 
 /**
- * Delete the Exercise whose id is provided in the query parameters
+ * Delete the exercise whose id is provided in the query parameters
  */
 app.delete('/exercises/:_id', (req, res) => {
     exercises.deleteById(req.params._id)

@@ -96,7 +96,7 @@ const replaceExercise = async (_id, name, reps, weight, unit, date) => {
  */
 const deleteById = async (_id) => {
     const result = await Exercise.deleteOne({ _id: _id });
-    // Return the count of deleted document. Since we called deleteOne, this will be either 0 or 1.
+    // Return the count of deleted document. Since this function called deleteOne, it will be either 0 or 1.
     return result.deletedCount;
 }
 

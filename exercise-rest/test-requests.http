@@ -30,7 +30,7 @@ content-type: application/json
 }
 
 ###
-DELETE http://localhost:3000/exercises/61113eb87094a14718b99347 HTTP/1.1
+DELETE http://localhost:3000/exercises/6111b9384c751c63a84b5be9 HTTP/1.1
 
 
 ###
@@ -50,9 +50,11 @@ POST http://localhost:3000/exercises HTTP/1.1
 content-type: application/json
 
 {
-    "title": "High Fidelity",
-    "year": 2000,
-    "language": "English"
+    "name": "Goblet Squat",
+    "reps": 10,
+    "weight": 20,
+    "unit": "lbs",
+    "date": "08-06-21"
 }
 
 ###
@@ -60,9 +62,11 @@ POST http://localhost:3000/exercises HTTP/1.1
 content-type: application/json
 
 {
-    "title": "Anchorman",
-    "year": 2004,
-    "language": "English"
+    "name": "Upright Row",
+    "reps": 6,
+    "weight": 20,
+    "unit": "kgs",
+    "date": "08-08-21"
 }
 
 
@@ -71,9 +75,11 @@ POST http://localhost:3000/exercises HTTP/1.1
 content-type: application/json
 
 {
-    "title": "No Country For Old Men",
-    "year": 2007,
-    "language": "English"
+    "name": "Reverse Lunges",
+    "reps": 12,
+    "weight": 55,
+    "unit": "lbs",
+    "date": "08-06-21"
 }
 
 
