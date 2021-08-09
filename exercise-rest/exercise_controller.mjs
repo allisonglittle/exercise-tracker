@@ -27,11 +27,11 @@ app.post('/exercises', (req, res) => {
  * Retrive the exercise corresponding to the ID provided in the URL.
  */
 app.get('/exercises/:_id', (req, res) => {
-    const ExerciseId = req.params._id;
-    exercises.findExerciseById(ExerciseId)
-        .then(Exercise => {
-            if (Exercise !== null) {
-                res.json(Exercise);
+    const exerciseId = req.params._id;
+    exercises.findExerciseById(exerciseId)
+        .then(exercise => {
+            if (exercise !== null) {
+                res.json(exercise);
             } else {
                 res.status(404).json({ Error: 'Resource not found' });
             }
@@ -43,17 +43,11 @@ app.get('/exercises/:_id', (req, res) => {
 });
 
 /**
- * Retrive exercises. 
- * If the query parameters include a year, then only the exercises for that year are returned.
- * Otherwise, all exercises are returned.
+ * Retrive all exercises. 
  */
 app.get('/exercises', (req, res) => {
     let filter = {};
-    // Is there a query parameter named year? If so add a filter based on its value.
-    if (req.query.year !== undefined) {
-        filter = { year: req.query.year };
-    }
-    exercises.findexercises(filter, '', 0)
+    exercises.findExercises(req.query, '', 0)
         .then(exercises => {
             res.json(exercises);
         })

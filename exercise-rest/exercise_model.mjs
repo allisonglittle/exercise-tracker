@@ -50,7 +50,7 @@ const createExercise = async (name, reps, weight, unit, date) => {
 }
 
 /**
- * Retrive Exercises based on the filter, projection and limit parameters
+ * Retrive exercises based on the filter, projection and limit parameters
  * @param {Object} filter 
  * @param {String} projection 
  * @param {Number} limit 

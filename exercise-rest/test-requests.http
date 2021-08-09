@@ -14,7 +14,7 @@ content-type: application/json
 GET http://localhost:3000/exercises HTTP/1.1
 
 ###
-GET http://localhost:3000/exercises/61113eb87094a14718b99347 HTTP/1.1
+GET http://localhost:3000/exercises/6111af86ffdccf245c3db1c2 HTTP/1.1
 
 ###
 
