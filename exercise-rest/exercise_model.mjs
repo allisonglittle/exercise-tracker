@@ -74,15 +74,17 @@ const findExerciseById = async (_id) => {
 }
 
 /**
- * Replace the title, year, language properties of the exercise with the id value provided
+ * Replace the name, reps, weight, unit, date properties of the exercise with the id value provided
  * @param {String} _id 
- * @param {String} title 
- * @param {Number} year 
- * @param {String} language 
+ * @param {String} name
+ * @param {Number} reps
+ * @param {Number} weight
+ * @param {String} unit
+ * @param {Date} date
  * @returns A promise. Resolves to the number of documents modified
  */
-const replaceExercise = async (_id, title, year, language) => {
-    const result = await Exercise.replaceOne({ _id: _id }, { title: title, year: year, language: language });
+const replaceExercise = async (_id, name, reps, weight, unit, date) => {
+    const result = await Exercise.replaceOne({ _id: _id }, { name: name, reps: reps, weight: weight, unit: unit, date: date });
     return result.nModified;
 }
 
