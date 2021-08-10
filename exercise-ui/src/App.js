@@ -28,13 +28,13 @@ function App() {
       <Router>
         <div>
           <Route path="/" exact>
-            <HomePage setExerciseToEdit={ setExerciseToEdit }/>
+            <HomePage setExerciseToEdit={ setExerciseToEdit } />
           </Route>
           <Route path="/new-exercise">
             <CreateExercisePage />
           </Route>
           <Route path="/edit-exercise">
-            <EditExercisePage />
+            <EditExercisePage exerciseToEdit={ exerciseToEdit } />
           </Route>
         </div>
       </Router>

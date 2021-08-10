@@ -4,7 +4,7 @@ import ExerciseList from '../components/ExerciseList';
 import { useState, useEffect } from 'react';
 import { useHistory } from 'react-router-dom';
 
-function HomePage( setExerciseToEdit) {
+function HomePage({ setExerciseToEdit }) {
 
     // exercises: array of exercises in db to show in table
     // setExercises: function to update the array
