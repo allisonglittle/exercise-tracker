@@ -4,24 +4,8 @@
 }
 
 .App-header {
-  text-align: center;
   font-family: 'Rockwell';
   background-color: #558868;
-}
-
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
   height: 100px;
   display: flex;
   flex-direction: column;
@@ -31,8 +15,16 @@
   color: white;
 }
 
-.App-link {
-  color: #61dafb;
+.App-logo {
+  pointer-events: none;
+  margin-left: 40px;
+  margin-right: 40px;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .App-logo {
+    animation: App-logo-spin infinite 20s linear;
+  }
 }
 
 @keyframes App-logo-spin {
@@ -43,3 +35,15 @@
     transform: rotate(360deg);
   }
 }
+
+body {
+  background-color: #D6DFD9;
+}
+
+
+
+.App-link {
+  color: #61dafb;
+}
+
+

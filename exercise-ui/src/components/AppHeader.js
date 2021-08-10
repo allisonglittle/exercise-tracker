@@ -4,8 +4,9 @@ import { GiWeightLiftingUp } from 'react-icons/gi';
 function AppHeader() {
     return (
         <header className="App-header">
-            <h1>Exercise Log</h1>
-            <GiWeightLiftingUp />
+            <h1>
+                <GiWeightLiftingUp className="App-logo" /> Exercise Log <GiWeightLiftingUp className="App-logo" />
+            </h1>
         </header>
     );
 }
