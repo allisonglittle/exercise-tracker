@@ -7,6 +7,9 @@ import EditExercisePage from './pages/EditExercisePage';
 import { useState } from 'react';
 
 function App() {
+
+  const [exerciseToEdit, setExerciseToEdit] = useState();
+
   return (
     <div className="App">
       <header className="App-header">
@@ -25,7 +28,7 @@ function App() {
       <Router>
         <div>
           <Route path="/" exact>
-            <HomePage />
+            <HomePage setExerciseToEdit={ setExerciseToEdit }/>
           </Route>
           <Route path="/new-exercise">
             <CreateExercisePage />

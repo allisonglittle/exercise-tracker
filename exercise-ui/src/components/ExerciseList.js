@@ -1,7 +1,7 @@
 import React from 'react';
 import Exercise from './Exercise';
 
-function ExerciseList( exercises ) {
+function ExerciseList({ exercises }) {
     return (
         <table id="exercises">
             <thead>
