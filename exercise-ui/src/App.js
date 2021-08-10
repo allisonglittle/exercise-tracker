@@ -22,6 +22,19 @@ function App() {
           Learn React
         </a>
       </header>
+      <Router>
+        <div>
+          <Route path="/" exact>
+            <HomePage />
+          </Route>
+          <Route path="/new-exercise">
+            <CreateExercisePage />
+          </Route>
+          <Route path="/edit-exercise">
+            <EditExercisePage />
+          </Route>
+        </div>
+      </Router>
     </div>
   );
 }
