@@ -6,6 +6,7 @@ import CreateExercisePage from './pages/CreateExercisePage';
 import EditExercisePage from './pages/EditExercisePage';
 import { useState } from 'react';
 import AppHeader from './components/AppHeader';
+import AppFooter from './components/AppFooter';
 
 function App() {
 
@@ -28,6 +29,7 @@ function App() {
             </Route>
           </div>
         </Router>
+        <AppFooter />
       </div>
     </>
   );

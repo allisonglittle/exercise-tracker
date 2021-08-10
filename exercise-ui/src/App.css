@@ -36,11 +36,34 @@
   }
 }
 
+.App-footer {
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  background-color: #7bad8f;
+  text-align: center;
+}
+
 body {
   background-color: #D6DFD9;
 }
 
+table {
+  width: 80%;
+  margin: auto;
+  text-align: left;
+}
 
+th {
+  background-color: #9FA9A3;
+  padding: 5px;
+}
+
+td {
+  border-bottom:2px solid darkgray;
+  padding: 5px;
+}
 
 .App-link {
   color: #61dafb;
