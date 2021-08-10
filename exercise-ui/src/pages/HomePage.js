@@ -6,6 +6,8 @@ import { useHistory } from 'react-router-dom';
 
 function HomePage( setExerciseToEdit) {
 
+    // exercises: array of exercises in db to show in table
+    // setExercises: function to update the array
     const [exercises, setExercises] = useState([]);
     const history = useHistory();
 
