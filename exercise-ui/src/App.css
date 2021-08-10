@@ -3,6 +3,12 @@
   font-family: 'Rockwell';
 }
 
+.App-header {
+  text-align: center;
+  font-family: 'Rockwell';
+  background-color: #558868;
+}
+
 .App-logo {
   height: 40vmin;
   pointer-events: none;
