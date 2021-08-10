@@ -1,7 +1,7 @@
 import React from 'react';
 import { MdDeleteForever, MdEdit } from 'react-icons/md';
 
-function Exercise( exercise) {
+function Exercise({ exercise }) {
     return (
         <tr>
             <td>{exercise.name}</td>
