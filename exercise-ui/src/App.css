@@ -69,4 +69,9 @@ td {
   color: #61dafb;
 }
 
-
+.field .text{
+  display:block;
+  width:60px;
+  font-size:20px;
+  margin:7px 10px 3px 3px;
+}

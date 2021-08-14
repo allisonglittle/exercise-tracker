@@ -33,10 +33,10 @@ function CreateExercisePage() {
     return (
         <div>
             <h1>Add exercise</h1>
-            <input
-                type="text"
-                value={name}
-                onChange={e => setName(e.target.value)} />
+
+            <label>Name: 
+                <input type="text" value={name} onChange={e => setName(e.target.value)} />
+            </label>
             <input
                 type="number"
                 value={reps}
