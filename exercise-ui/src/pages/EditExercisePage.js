@@ -1,6 +1,7 @@
 import React from 'react';
 import { useState } from 'react';
 import { useHistory } from 'react-router-dom';
+import ExerciseDetails from '../components/ExerciseDetails';
 
 function EditExercisePage ({ exerciseToEdit }) {
 
@@ -31,26 +32,7 @@ function EditExercisePage ({ exerciseToEdit }) {
 return (
     <div>
         <h1>Edit exercise</h1>
-        <input
-            type="text"
-            value={name}
-            onChange={e => setName(e.target.value)} />
-        <input
-            type="number"
-            value={reps}
-            onChange={e => setReps(e.target.value)} />
-        <input
-            type="number"
-            value={weight}
-            onChange={e => setWeight(e.target.value)} />
-        <input
-            type="text"
-            value={unit}
-            onChange={e => setUnit(e.target.value)} />
-        <input
-            type="date"
-            value={date}
-            onChange={e => setDate(e.target.value)} />
+        <ExerciseDetails name={name} setName={setName} reps={reps} setReps={setReps} weight={weight} setWeight={setWeight} unit={unit} setUnit={setUnit} date={date} setDate={setDate} />
         <button
             onClick={editExercise}
         >Save</button>
