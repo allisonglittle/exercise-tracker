@@ -18,7 +18,7 @@ app.post('/exercises', (req, res) => {
         .catch(error => {
             console.error(error);
             // In case of an error, send back status code 400.
-            res.status(400).json({ Error: 'Request failed' });
+            res.status(500).json({ Error: 'Request failed' });
         });
 });
 
@@ -31,14 +31,14 @@ app.get('/exercises/:_id', (req, res) => {
     exercises.findExerciseById(exerciseId)
         .then(exercise => {
             if (exercise !== null) {
-                res.json(exercise);
+                res.status(200).json(exercise);
             } else {
-                res.status(404).json({ Error: 'Resource not found' });
+                res.status(500).json({ Error: 'Resource not found' });
             }
         })
         .catch(error => {
             console.error(error);
-            res.status(400).json({ Error: 'Request failed' });
+            res.status(500).json({ Error: 'Request failed' });
         });
 });
 
@@ -49,11 +49,11 @@ app.get('/exercises', (req, res) => {
     let filter = {};
     exercises.findExercises(req.query, '', 0)
         .then(exercises => {
-            res.json(exercises);
+            res.status(200).json(exercises);
         })
         .catch(error => {
             console.error(error);
-            res.status(400).json({ Error: 'Request failed' });
+            res.status(500).json({ Error: 'Request failed' });
         });
 });
 
@@ -67,12 +67,12 @@ app.put('/exercises/:_id', (req, res) => {
             if (numUpdated === 1) {
                 res.json({ _id: req.params._id, name: req.body.name, reps: req.body.reps, weight: req.body.weight, unit: req.body.unit, date: req.body.date });
             } else {
-                res.status(404).json({ Error: 'Resource not found' });
+                res.status(500).json({ Error: 'Resource not found' });
             }
         })
         .catch(error => {
             console.error(error);
-            res.status(400).json({ Error: 'Request failed' });
+            res.status(500).json({ Error: 'Request failed' });
         });
 });
 
@@ -85,12 +85,12 @@ app.delete('/exercises/:_id', (req, res) => {
             if (deletedCount === 1) {
                 res.status(204).send();
             } else {
-                res.status(404).json({ Error: 'Resource not found' });
+                res.status(500).json({ Error: 'Resource not found' });
             }
         })
         .catch(error => {
             console.error(error);
-            res.send({ error: 'Request failed' });
+            res.status(500).send({ error: 'Request failed' });
         });
 });
 
