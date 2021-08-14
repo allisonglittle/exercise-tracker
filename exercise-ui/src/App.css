@@ -77,8 +77,13 @@ td {
   padding-right: 20px;
 }
 
+input {
+  font-family: 'Rockwell';
+  font-size: 1.1rem;
+  margin: 5px;
+}
+
 .numericInput {
-  margin: auto;
   width: 50px;
 }
 
