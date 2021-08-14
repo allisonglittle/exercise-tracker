@@ -22,9 +22,7 @@ function CreateExercisePage() {
                 'Content-Type': 'application/json',
             },
         });
-        if (response.status === 201) {
-            alert("Successfully added the exercise");
-        } else {
+        if (response.status !== 201) {
             alert(`Failed to add exercise, status code = ${response.status}`);
         }
         // return to home page

@@ -25,7 +25,7 @@ const exerciseSchema = mongoose.Schema({
     reps: { type: Number, required: true },
     weight: { type: Number, required: true },
     unit: { type: String, required: true },
-    date: { type: Date, required: true}
+    date: { type: String, required: true}
 });
 
 /**
@@ -39,7 +39,7 @@ const Exercise = mongoose.model("Exercise", exerciseSchema);
  * @param {Number} reps
  * @param {Number} weight
  * @param {String} unit
- * @param {Date} date
+ * @param {String} date
  * @returns A promise. Resolves to the JSON object for the document created by calling save
  */
 const createExercise = async (name, reps, weight, unit, date) => {
@@ -80,7 +80,7 @@ const findExerciseById = async (_id) => {
  * @param {Number} reps
  * @param {Number} weight
  * @param {String} unit
- * @param {Date} date
+ * @param {String} date
  * @returns A promise. Resolves to the number of documents modified
  */
 const replaceExercise = async (_id, name, reps, weight, unit, date) => {

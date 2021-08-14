@@ -21,9 +21,7 @@ function EditExercisePage ({ exerciseToEdit }) {
                 'Content-Type': 'application/json',
             },
         });
-        if (response.status === 200) {
-            alert("Successfully edited the exercise");
-        } else {
+        if (response.status !== 200) {
             alert(`Failed to edit exercise, status code = ${response.status}`);
         }
         // return to homepage
