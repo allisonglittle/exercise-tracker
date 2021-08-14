@@ -14,8 +14,8 @@ function App() {
 
   return (
     <>
-      <AppHeader />
       <div className="App">
+        <AppHeader />
         <Router>
           <div>
             <Route path="/" exact>
