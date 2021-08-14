@@ -1,6 +1,7 @@
 import React from 'react';
 import { useState } from 'react';
 import { useHistory } from 'react-router-dom';
+import ExerciseDetails from '../components/ExerciseDetails';
 
 function CreateExercisePage() {
 
@@ -31,28 +32,15 @@ function CreateExercisePage() {
     return (
         <div>
             <h1>Add exercise</h1>
-            <div>
-                <label className="inputLabel">Name: 
-                    <input className="textInput" type="text" value={name} onChange={e => setName(e.target.value)} />
-                </label>
-                <label className="inputLabel">Reps:
-                    <input className="numericInput" type="number" value={reps} onChange={e => setReps(e.target.value)} />
-                </label>
-                <label className="inputLabel">Weight:
-                    <input className="numericInput" type="number" value={weight} onChange={e => setWeight(e.target.value)} />
-                </label>
-                <label className="inputLabel">Unit: 
-                    <input className="numericInput" type="text" value={unit} onChange={e => setUnit(e.target.value)} />
-                </label>
-                <label className="inputLabel">Date: 
-                    <input type="date" value={date} onChange={e => setDate(e.target.value)} />
-                </label>
-            </div>
+            <ExerciseDetails name={name} setName={setName} reps={reps} setReps={setReps} weight={weight} setWeight={setWeight} unit={unit} setUnit={setUnit} date={date} setDate={setDate} />
             <button className="submitButton"
                 onClick={addExercise}
             >Submit</button>
         </div>
     );
 }
-
+// {/* <label className="inputLabel">Unit: 
+//                     <input className="numericInput" type="text" value={unit} onChange={e => setUnit(e.target.value)} />
+//                 </label> */}
+//<input className="numericInput" type="text" value={unit} onChange={e => setUnit(e.target.value)} />
 export default CreateExercisePage;
