@@ -81,3 +81,10 @@ td {
   margin: auto;
   width: 50px;
 }
+
+.submitButton {
+  font-family: 'Rockwell';
+  margin-top: 20px;
+  font-size: 20px;
+  background-color: cadetblue;
+}

@@ -48,7 +48,7 @@ function CreateExercisePage() {
                     <input type="date" value={date} onChange={e => setDate(e.target.value)} />
                 </label>
             </div>
-            <button
+            <button className="submitButton"
                 onClick={addExercise}
             >Submit</button>
         </div>
