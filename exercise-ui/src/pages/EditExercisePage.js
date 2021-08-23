@@ -33,7 +33,7 @@ return (
     <div>
         <h1>Edit exercise</h1>
         <ExerciseDetails name={name} setName={setName} reps={reps} setReps={setReps} weight={weight} setWeight={setWeight} unit={unit} setUnit={setUnit} date={date} setDate={setDate} />
-        <button
+        <button className="submitButton"
             onClick={editExercise}
         >Save</button>
     </div>
