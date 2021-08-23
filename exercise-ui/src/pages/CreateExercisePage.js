@@ -25,6 +25,8 @@ function CreateExercisePage() {
         });
         if (response.status !== 201) {
             alert(`Failed to add exercise, status code = ${response.status}`);
+        } else {
+            alert(`Exercise created successfully.`);
         }
         // return to home page
         history.push("/");
